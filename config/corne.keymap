@@ -56,9 +56,9 @@
 
         pirate {
             bindings = <
-&kp ESCAPE  &kp SLASH      &kp MINUS    &kp PLUS  &kp ASTERISK  &trans       &trans  &kp N1  &kp N2  &kp N3  &trans         &trans
-&trans      &kp LESS_THAN  &kp GT       &kp EXCL  &kp EQUAL     &kp QMARK    &trans  &kp N4  &kp N5  &kp N6  &kp N0         &kp GRAVE
-&trans      &kp CARET      &kp PERCENT  &kp PIPE  &kp AMPS      &trans       &trans  &kp N7  &kp N8  &kp N9  &kp BACKSLASH  &trans
+&kp ESCAPE  &kp TILDE  &kp AT          &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans  &trans  &kp N1  &kp N2  &kp N3  &trans         &trans
+&trans      &kp HASH   &kp UNDERSCORE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans  &trans  &kp N4  &kp N5  &kp N6  &kp N0         &kp GRAVE
+&trans      &trans     &kp DOLLAR      &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans  &trans  &kp N7  &kp N8  &kp N9  &kp BACKSLASH  &trans
                                         &trans    &trans        &trans       &trans  &trans  &trans
             >;
 
@@ -67,9 +67,9 @@
 
         sky {
             bindings = <
-&kp ESCAPE  &kp TILDE  &kp AT          &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans    &trans    &trans    &kp UP    &trans     &trans         &kp DELETE
-&trans      &kp HASH   &kp UNDERSCORE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans    &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END        &kp DOUBLE_QUOTES
-&trans      &trans     &kp DOLLAR      &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans    &trans    &trans    &trans    &trans     &kp BACKSLASH  &trans
+&kp ESCAPE  &kp SLASH      &kp MINUS    &kp PLUS  &kp ASTERISK  &trans       &trans    &trans    &kp UP    &trans     &trans         &kp DELETE
+&trans      &kp LESS_THAN  &kp GT       &kp EXCL  &kp EQUAL     &kp QMARK    &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END        &kp DOUBLE_QUOTES
+&trans      &kp CARET      &kp PERCENT  &kp PIPE  &kp AMPS      &trans       &trans    &trans    &trans    &trans     &kp BACKSLASH  &trans
                                        &trans                &trans                 &trans    &trans    &trans    &trans
             >;
 

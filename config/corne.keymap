@@ -67,7 +67,7 @@
 
         sky {
             bindings = <
-&kp ESCAPE  &kp SLASH      &kp MINUS    &kp PLUS  &kp ASTERISK  &trans       &trans    &trans    &kp UP    &trans     &trans         &kp DELETE
+&kp ESCAPE  &kp SLASH      &kp MINUS    &kp PLUS  &kp ASTERISK  &kp COLON    &trans    &trans    &kp UP    &trans     &kp RIGHT_ALT  &kp DELETE
 &trans      &kp LESS_THAN  &kp GT       &kp EXCL  &kp EQUAL     &kp QMARK    &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END        &kp DOUBLE_QUOTES
 &trans      &kp CARET      &kp PERCENT  &kp PIPE  &kp AMPS      &trans       &trans    &trans    &trans    &trans     &kp BACKSLASH  &trans
                                         &trans    &trans        &trans       &trans    &trans    &trans

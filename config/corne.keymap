@@ -1,15 +1,9 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    macros {
+  macros {
         u5: u5 {
             compatible = "zmk,behavior-macro";
             label = "U5";
@@ -34,77 +28,63 @@
             #binding-cells = <0>;
             bindings = <&kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT_ARROW>;
         };
-    };
+  };
 
-    combos {
+  combos {
         compatible = "zmk,combos";
-
         btclear {
             bindings = <&bt BT_CLR>;
             key-positions = <6 18 30>;
             layers = <3>;
         };
+  };
+
+  keymap {
+    compatible = "zmk,keymap";
+
+    default_layer {
+      label = "Base";
+      bindings = <
+&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T      &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
+&kp LCTRL  &kp A  &kp S  &kp D     &kp F  &kp G      &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z  &kp X  &kp C     &kp V  &kp B      &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
+                         &kp LGUI  &mo 1  &kp SPACE  &kp RET  &mo 2  &kp RALT
+      >;
     };
-
-    keymap {
-        compatible = "zmk,keymap";
-
-        default_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-
-            label = "Base";
-            bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
-                         &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
-            >;
-        };
-
-        pirate {
-            bindings = <
-&kp ESCAPE  &kp TILDE  &kp AT          &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans    &trans     &kp N1  &kp N2  &kp N3  &trans           &kp DELETE
-&trans      &kp HASH   &kp UNDERSCORE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans    &kp UNDER  &kp N4  &kp N5  &kp N6  &kp KP_NUMBER_0  &kp GRAVE
-&trans      &trans     &kp DOLLAR      &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans    &trans     &kp N7  &kp N8  &kp N9  &kp BACKSLASH    &trans
-                                       &trans                &trans                 &trans    &trans     &trans  &trans
-            >;
-
-            label = "PIRATE";
-        };
-
-        sky {
-            bindings = <
-&kp ESCAPE  &kp SLASH      &kp MINUS    &kp PLUS  &kp ASTERISK  &kp COLON    &trans    &kp PG_UP  &kp UP    &kp PG_DN  &kp RIGHT_ALT  &kp DELETE
-&trans      &kp LESS_THAN  &kp GT       &kp EXCL  &kp EQUAL     &kp QMARK    &kp HOME  &kp LEFT   &kp DOWN  &kp RIGHT  &kp END        &kp DOUBLE_QUOTES
-&trans      &kp CARET      &kp PERCENT  &kp PIPE  &kp AMPS      &trans       &trans    &trans     &trans    &trans     &kp BACKSLASH  &trans
-                                        &trans    &trans        &trans       &trans    &trans     &trans
-            >;
-
-            label = "SKY";
-        };
-
-        super {
-            bindings = <
-&kp ESCAPE  &kp F1   &kp F2   &kp F3      &kp F4      &kp F5     &kp PRINTSCREEN  &trans  &u5     &kp INSERT  &kp KP_NUMLOCK  &trans
-&trans      &kp F6   &kp F7   &kp F8      &kp F9      &kp F10    &trans           &l5     &d5     &r5         &kp ESCAPE      &trans
-&trans      &kp F11  &kp F12  &bt BT_PRV  &bt BT_NXT  &trans     &trans           &trans  &trans  &trans      &kp PIPE        &trans
-                              &trans      &trans      &trans     &trans           &trans  &trans
-            >;
-
-            label = "super";
-        };
+    pirate {
+      label = "PIRATE";
+      bindings = <
+&kp ESCAPE  &kp TILDE  &kp AT          &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans  &kp COLON  &kp SLASH  &kp MINUS  &kp PLUS       &kp ASTERISK   &kp DELETE
+&trans      &kp HASH   &kp UNDERSCORE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans  &kp UNDER  &kp EQUAL  &kp EXCL   &kp LESS_THAN  &kp GT         &kp GRAVE
+&trans      &kp CARET  &kp DOLLAR      &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans  &kp QMARK  &kp AMPS   &kp PIPE   &kp PERCENT    &kp BACKSLASH  &trans
+                                       &trans                &trans                 &trans  &trans     &trans     &trans
+      >;
     };
+    sky {
+      label = "SKY";
+      bindings = <
+&kp ESCAPE  &trans           &kp N1  &kp N2  &kp N3  &trans  &trans    &kp PG_UP  &kp UP    &kp PG_DN  &kp RIGHT_ALT  &kp DELETE
+&trans      &kp KP_NUMBER_0  &kp N4  &kp N5  &kp N6  &trans  &kp HOME  &kp LEFT   &kp DOWN  &kp RIGHT  &kp END        &kp DOUBLE_QUOTES
+&trans      &trans           &kp N7  &kp N8  &kp N9  &trans  &trans    &trans     &trans    &trans     &kp BACKSLASH  &trans
+                                     &trans  &trans  &trans  &trans    &trans     &trans
+      >;
+    };
+    super {
+      label = "super";
+      bindings = <
+&kp ESCAPE  &kp F1   &kp F2   &kp F3      &kp F4      &kp F5   &kp PRINTSCREEN  &trans  &u5     &kp INSERT  &kp KP_NUMLOCK  &trans
+&trans      &kp F6   &kp F7   &kp F8      &kp F9      &kp F10  &trans           &l5     &d5     &r5         &kp ESCAPE      &trans
+&trans      &kp F11  &kp F12  &bt BT_PRV  &bt BT_NXT  &trans   &trans           &trans  &trans  &trans      &kp PIPE        &trans
+                              &trans      &trans      &trans   &trans           &trans  &trans
+      >;
+    };
+  };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
+  conditional_layers {
+  compatible = "zmk,conditional-layers";
         superraise {
             if-layers = <2 1>;
             then-layer = <3>;
         };
-    };
+  };
 };
